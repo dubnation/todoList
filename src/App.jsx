@@ -28,15 +28,16 @@ function App() {
 
   }
 
-  function handleDeleteToDo(deleteToDo) {
-    var newToDoList = []
-    todos.forEach(todo => {
-      if (todo != deleteToDo) {
-        newToDoList.push(todo)
-      }
-  });
-  setTodos(newToDoList)
+  function equalObjects(obj1, obj2) {
+    return obj1.input === obj2.input && obj1.complete === obj2.complete;
   }
+  
+  function handleDeleteToDo(deleteToDo) {
+    const newToDoList = todos.filter(todo => todo !== deleteToDo);
+    setTodos(newToDoList);
+  }
+  
+  
 
   function handleDoneTodo(doneTodo) {
     // Use map to create a new array with the updated todos
@@ -50,20 +51,13 @@ function App() {
 
   function editDoneToDo(editToDo, newInput) {
     const editToDoList = todos.map((todo) => 
-      todo === doneTodo ? {input: newInput, ...todo} : todo
+      todo === editToDo ? { ...todo, input: newInput } : todo // Fix the typo and update input
     );
-  setTodos(editToDoList)
-
+    setTodos(editToDoList);
   }
 
 
    
-
-
-
-  let x = 3
-  let y = 4
-  let z = 5
 
   return (
     <> 

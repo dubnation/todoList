@@ -43,12 +43,12 @@ export function ToDoCard(props) {
             <h6>Done</h6>
           </button>
 
-          <button onClick={() => handleDeleteToDo(curr)} className="hover-button">
+          <button disabled = {editing} onClick={() => handleDeleteToDo(curr)} className="hover-button">
             <h6>Delete</h6>
           </button>
 
           <button
-            disabled={curr.complete}
+            disabled={curr.complete || editing}
             onClick={() => setEditing(true)}
             className="hover-button"
           >

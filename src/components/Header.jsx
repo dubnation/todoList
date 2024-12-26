@@ -20,7 +20,7 @@ export function Header(props) {
     
     return (
         <header>
-            <h1 className = "text-gradient"> You have {open} {booleanToString(isTasksPlural)} open.</h1>
+            <h1 className = "text-gradient"> You have {open} open {booleanToString(isTasksPlural)}.</h1>
         </header>
     )
 }
