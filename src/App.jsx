@@ -62,6 +62,9 @@ function App() {
 
 
   let x = 3
+  let y = 4
+  let z = 5
+
   return (
     <> 
       <Header todos = {todos} />
